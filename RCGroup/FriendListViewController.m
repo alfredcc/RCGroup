@@ -9,6 +9,7 @@
 #import "FriendListViewController.h"
 #import <RongIMKit/RongIMKit.h>
 #import "RCDataManager.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface FriendListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -47,6 +48,7 @@
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"friendCell"];
     RCUserInfo *userInfo = self.dataSource[indexPath.row];
     cell.textLabel.text = userInfo.name;
+    [cell.imageView setImageWithURL:[NSURL URLWithString:userInfo.portraitUri]];
     return cell;
 }
 
