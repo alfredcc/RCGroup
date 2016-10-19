@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+//typedef NS_ENUM(NSInteger, GroupOperationType) {
+//    GroupOperationTypeNew = 1,
+//    GroupOperationTypeJoin = 2
+//};
+
 @interface NewGroupViewController : UIViewController
 
 @end

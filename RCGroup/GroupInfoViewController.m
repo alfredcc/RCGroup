@@ -8,6 +8,7 @@
 
 #import "GroupInfoViewController.h"
 #import "GroupUserCollectionViewCell.h"
+#import "AddGroupUserViewController.h"
 #import "RCAPIProvider.h"
 #import "AppDelegate.h"
 #import "UIImageView+AFNetworking.h"
@@ -39,13 +40,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"PresetAddGroupUserVC"]) {
+        UINavigationController *nav = segue.destinationViewController;
+        AddGroupUserViewController *viewController = [[nav viewControllers] lastObject];
+        viewController.groupId = self.groupId;
+        viewController.groupName = self.groupId;
+    }
+}
+
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    return self.dataSource.count + 2;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.dataSource.count) {
+        GroupUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AddGroupUserCell" forIndexPath:indexPath];
+        return cell;
+    } else if (indexPath.row == self.dataSource.count + 1) {
+        GroupUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RemoveGroupUserCell" forIndexPath:indexPath];
+        return cell;
+    }
     GroupUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GroupUserCollectionViewCell" forIndexPath:indexPath];
     RCUserInfo *userInfo = self.dataSource[indexPath.row];
     cell.nameLabel.text = userInfo.userId;
@@ -54,7 +72,21 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(80, 80);
+    return CGSizeMake(80, 85);
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.dataSource.count) {
+        [self performSegueWithIdentifier:@"PresetAddGroupUserVC" sender:nil];
+    }else if (indexPath.row == self.dataSource.count + 1) {
+        
+    }
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 #pragma mark - getters and setters
@@ -70,6 +102,7 @@
 
 - (void)_fetchGroupUsers {
     [RCAPIProvider queryGroupUserWithGroupId:self.groupId block:^(NSArray *users, NSError *error) {
+        [self.dataSource removeAllObjects];
         for (NSDictionary *user in users) {
             NSString *userId = [user objectForKey:@"id"];
             for (RCUserInfo *userInfo in [AppDelegate shareAppDelegate].friendsArray) {
