@@ -11,6 +11,7 @@
 #import "RCDataManager.h"
 #import "RCAPIProvider.h"
 #import "AppDelegate.h"
+#import "NSString+Hashes.h"
 
 @interface NewGroupViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -50,8 +51,9 @@
     [alertController addAction:[UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         NSArray * textfields = alertController.textFields;
         UITextField * namefield = textfields[0];
-        NSLog(@"%@",namefield.text);
-        NSString *groupId = [AppDelegate shareAppDelegate].currentUserId;
+        NSString *userIdsString = [[self.userIds allObjects] componentsJoinedByString:@","];
+        NSString *groupId = [[NSString stringWithFormat:@"%@%@",userIdsString,namefield.text] sha1];
+        NSLog(@"%@", groupId);
         [RCAPIProvider createGroupWithGroupId:groupId userIds:self.userIds groupName:namefield.text block:^(NSString *code, NSError *error) {
             NSLog(@"%@", code);
             if (error == nil) {

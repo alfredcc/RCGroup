@@ -29,8 +29,7 @@
                                         @(ConversationType_APPSERVICE),
                                         @(ConversationType_SYSTEM)]];
     //设置需要将哪些类型的会话在会话列表中聚合显示
-    [self setCollectionConversationType:@[@(ConversationType_DISCUSSION),
-                                          @(ConversationType_GROUP)]];
+    [self setCollectionConversationType:@[@(ConversationType_DISCUSSION)]];
     
 }
 
@@ -49,11 +48,6 @@
     conversationVC.title = model.conversationTitle;
     [self.navigationController pushViewController:conversationVC animated:YES];
     
-}
-- (IBAction)addGroup:(UIBarButtonItem *)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    FriendListViewController * viewController = (FriendListViewController *)[sb instantiateViewControllerWithIdentifier:@"FriendListViewController"];
-    [self presentViewController:viewController animated:true completion:nil];
 }
 
 @end
