@@ -8,6 +8,7 @@
 
 #import "ChatListViewController.h"
 #import <RongIMKit/RongIMKit.h>
+#import "FriendListViewController.h"
 
 @interface ChatListViewController ()
 
@@ -49,4 +50,10 @@
     [self.navigationController pushViewController:conversationVC animated:YES];
     
 }
+- (IBAction)addGroup:(UIBarButtonItem *)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FriendListViewController * viewController = (FriendListViewController *)[sb instantiateViewControllerWithIdentifier:@"FriendListViewController"];
+    [self presentViewController:viewController animated:true completion:nil];
+}
+
 @end

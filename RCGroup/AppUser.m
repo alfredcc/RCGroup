@@ -17,7 +17,7 @@
 @implementation AppUser (NSCoding)
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.userID forKey:@"RC.userID"];
+    [aCoder encodeObject:self.userId forKey:@"RC.userId"];
     [aCoder encodeObject:self.token forKey:@"RC.token"];
 }
 
@@ -27,8 +27,8 @@
         return nil;
     }
     
-    self.userID = [aDecoder decodeObjectOfClass:[NSString class] forKey:@"RC.userID"];
-    self.token = [aDecoder decodeObjectOfClass:[NSString class] forKey:@"RC.token"];
+    self.userId = [aDecoder decodeObjectOfClass:[AppUser class] forKey:@"RC.userId"];
+    self.token = [aDecoder decodeObjectOfClass:[AppUser class] forKey:@"RC.token"];
     
     return self;
 }

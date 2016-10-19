@@ -33,7 +33,7 @@
 
     NSUInteger portraitIndex = arc4random() % portraitURLs.count;
     for (NSUInteger index = 1; index<100; index++) {
-        RCUserInfo *userInfo = [[RCUserInfo alloc] initWithUserId:[NSString stringWithFormat:@"%ld",index] name:[NSString stringWithFormat:@"User%ld",index] portrait: portraitURLs[portraitIndex]];
+        RCUserInfo *userInfo = [[RCUserInfo alloc] initWithUserId:[NSString stringWithFormat:@"User%ld",index] name:[NSString stringWithFormat:@"User%ld",index] portrait: portraitURLs[portraitIndex]];
         [dataSoure addObject:userInfo];
     }
     [AppDelegate shareAppDelegate].friendsArray = dataSoure;

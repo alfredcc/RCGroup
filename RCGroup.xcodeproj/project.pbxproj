@@ -20,6 +20,7 @@
 		1B341DE31DB6E07B00E6B4E8 /* RCAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE21DB6E07B00E6B4E8 /* RCAPIProvider.m */; };
 		1B341DE61DB6E96F00E6B4E8 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */; };
 		1B341DEA1DB6EA3500E6B4E8 /* RCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE91DB6EA3500E6B4E8 /* RCDataManager.m */; };
+		1B341DF01DB7063B00E6B4E8 /* NewGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DEF1DB7063B00E6B4E8 /* NewGroupViewController.m */; };
 		B769A14E5573F3D03F9BA9B7 /* libPods-RCGroup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C5E566F9AD707AC39A5EA /* libPods-RCGroup.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
 		1B341DE81DB6EA3500E6B4E8 /* RCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDataManager.h; sourceTree = "<group>"; };
 		1B341DE91DB6EA3500E6B4E8 /* RCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDataManager.m; sourceTree = "<group>"; };
+		1B341DEE1DB7063B00E6B4E8 /* NewGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGroupViewController.h; sourceTree = "<group>"; };
+		1B341DEF1DB7063B00E6B4E8 /* NewGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGroupViewController.m; sourceTree = "<group>"; };
 		6D7C5E566F9AD707AC39A5EA /* libPods-RCGroup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCGroup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		728FEF921688E886457018EC /* Pods-RCGroup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCGroup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCGroup/Pods-RCGroup.debug.xcconfig"; sourceTree = "<group>"; };
 		CE33F7946A00664018DB39D9 /* Pods-RCGroup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCGroup.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCGroup/Pods-RCGroup.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				1B341DBF1DB64A7600E6B4E8 /* ViewController.m */,
 				1B341DE41DB6E96F00E6B4E8 /* FriendListViewController.h */,
 				1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */,
+				1B341DEE1DB7063B00E6B4E8 /* NewGroupViewController.h */,
+				1B341DEF1DB7063B00E6B4E8 /* NewGroupViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				1B341DBD1DB64A7600E6B4E8 /* AppDelegate.m in Sources */,
 				1B341DD41DB64BB000E6B4E8 /* ChatListViewController.m in Sources */,
 				1B341DE31DB6E07B00E6B4E8 /* RCAPIProvider.m in Sources */,
+				1B341DF01DB7063B00E6B4E8 /* NewGroupViewController.m in Sources */,
 				1B341DD81DB666D000E6B4E8 /* NSString+Hashes.m in Sources */,
 				1B341DDC1DB66BEB00E6B4E8 /* RCAPIClient.m in Sources */,
 				1B341DBA1DB64A7600E6B4E8 /* main.m in Sources */,

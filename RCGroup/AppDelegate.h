@@ -12,8 +12,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property(nonatomic,retain) NSMutableArray *friendsArray;
+@property (strong, nonatomic) NSMutableArray *friendsArray;
+@property (strong, nonatomic) NSString *currentUserId;
 
 + (AppDelegate* )shareAppDelegate;
+
 @end
 

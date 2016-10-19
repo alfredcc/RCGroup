@@ -12,6 +12,7 @@
 
 @interface RCAPIProvider : NSObject
 
-+ (NSURLSessionDataTask *)loginWithUserId:(NSString *)userID name:(NSString *)name block:(void (^)(AppUser *user, NSError *error))block;
++ (NSURLSessionDataTask *)loginWithUserId:(NSString *)userId name:(NSString *)name block:(void (^)(AppUser *user, NSError *error))block;
 
++ (NSURLSessionDataTask *)createGroupWithGroupId:(NSString *)groupId userIds:(NSSet *)userIds groupName:(NSString *)groupName block:(void (^)(NSString *code, NSError *))block;
 @end

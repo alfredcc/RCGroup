@@ -11,7 +11,7 @@
 
 @interface AppUser : NSObject
 
-@property (nonatomic, assign) NSString *userID;
+@property (nonatomic, assign) NSString *userId;
 @property (nonatomic, strong) NSString *token;
 
 

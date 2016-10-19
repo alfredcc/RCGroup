@@ -34,7 +34,7 @@ static NSString * const showTabBar = @"presentTabBarVC";
 }
 
 - (void)_viewSetup {
-    self.loginButton.layer.cornerRadius = CGRectGetHeight(self.loginButton.frame) / 2 ;
+    self.loginButton.layer.cornerRadius = 5.0;
     [self.loginButton addTarget:self action:@selector(loginRongCloud) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -45,6 +45,7 @@ static NSString * const showTabBar = @"presentTabBarVC";
     [RCAPIProvider loginWithUserId:userID name:userName block:^(AppUser *user, NSError *error) {
         [[RCIM sharedRCIM] connectWithToken: user.token success:^(NSString *userId) {
             NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+            [AppDelegate shareAppDelegate].currentUserId = userId;
             [[RCIM sharedRCIM] setUserInfoDataSource:self];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self performSegueWithIdentifier:showTabBar sender:nil];
