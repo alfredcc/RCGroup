@@ -42,6 +42,7 @@
 - (IBAction)quitButtonTapped:(id)sender {
     [RCAPIProvider quitGroupWithGroupId:self.groupId userId:[[RCIM sharedRCIM].currentUserInfo userId] block:^(NSString *code, NSError *error) {
         NSLog(@"%@",code);
+        [[self navigationController] popToRootViewControllerAnimated:true];
     }];
 }
 

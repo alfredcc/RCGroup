@@ -31,7 +31,7 @@
                                         @(ConversationType_SYSTEM)]];
     //设置需要将哪些类型的会话在会话列表中聚合显示
     [self setCollectionConversationType:@[@(ConversationType_DISCUSSION)]];
-    
+    [self conversationListTableView].tableFooterView = [UIView new];
 }
 
 - (void)didReceiveMemoryWarning {
