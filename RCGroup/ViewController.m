@@ -8,14 +8,17 @@
 
 #import "ViewController.h"
 #import "ChatListViewController.h"
-#import "RCAPIClient.h"
+#import "RCAPIProvider.h"
 #import "AppUser.h"
+#import "AppDelegate.h"
+#import "RCDataManager.h"
 
-// 客户端不提供获取 Token的接口, 通过 API 调试的功能获取
-NSString * const kUserToken = @"dq4Dareui+f5x+qiy9U7hvuHz/6FdTGTzF/Xcx6QPQGpm65bjSJevkiP85QB/73HotKvEO6r0vX24wBaqAhU9FB1wBFz3p/v";
+static NSString * const showTabBar = @"presentTabBarVC";
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *userIdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
@@ -27,10 +30,6 @@ NSString * const kUserToken = @"dq4Dareui+f5x+qiy9U7hvuHz/6FdTGTzF/Xcx6QPQGpm65b
     // Do any additional setup after loading the view, typically from a nib.
     
     [self _viewSetup];
-    
-    
-    
-   
         
 }
 
@@ -40,15 +39,17 @@ NSString * const kUserToken = @"dq4Dareui+f5x+qiy9U7hvuHz/6FdTGTzF/Xcx6QPQGpm65b
 }
 
 - (void)loginRongCloud {
+    NSString *userID = _userIdTextField.text;
+    NSString *userName = _userIdTextField.text;
     
-    [AppUser fetchUserInfoWithBlock:^(AppUser *user, NSError *error) {
-        NSLog(@"%@", user.token);
+    [RCAPIProvider loginWithUserId:userID name:userName block:^(AppUser *user, NSError *error) {
         [[RCIM sharedRCIM] connectWithToken: user.token success:^(NSString *userId) {
             NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
             [[RCIM sharedRCIM] setUserInfoDataSource:self];
             dispatch_async(dispatch_get_main_queue(), ^{
-                ChatListViewController *chatListViewController = [[ChatListViewController alloc]init];
-                [self.navigationController pushViewController:chatListViewController animated:YES];
+                [self performSegueWithIdentifier:showTabBar sender:nil];
+//                ChatListViewController *chatListViewController = [[ChatListViewController alloc]init];
+//                [self.navigationController pushViewController:chatListViewController animated:YES];
             });
         } error:^(RCConnectErrorCode status) {
             NSLog(@"登陆的错误码为:%ld", (long)status);
@@ -58,12 +59,17 @@ NSString * const kUserToken = @"dq4Dareui+f5x+qiy9U7hvuHz/6FdTGTzF/Xcx6QPQGpm65b
             //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
             NSLog(@"token错误");
         }];
-
     }];
-    }
+}
 
 // 在方法中要提供给融云用户的信息, 缓存在本地
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
+    for (RCUserInfo *user in [AppDelegate shareAppDelegate].friendsArray) {
+        if ([userId isEqualToString:user.userId]) {
+            completion(user);
+            break;
+        }
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

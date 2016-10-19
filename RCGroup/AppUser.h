@@ -14,7 +14,7 @@
 @property (nonatomic, assign) NSString *userID;
 @property (nonatomic, strong) NSString *token;
 
-+ (NSURLSessionDataTask *)fetchUserInfoWithBlock:(void (^)(AppUser *user, NSError *error))block;
+
 
 @end
 

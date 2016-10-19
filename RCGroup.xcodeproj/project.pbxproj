@@ -17,6 +17,9 @@
 		1B341DD81DB666D000E6B4E8 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DD71DB666D000E6B4E8 /* NSString+Hashes.m */; };
 		1B341DDC1DB66BEB00E6B4E8 /* RCAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DDB1DB66BEB00E6B4E8 /* RCAPIClient.m */; };
 		1B341DE01DB6704B00E6B4E8 /* AppUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DDF1DB6704B00E6B4E8 /* AppUser.m */; };
+		1B341DE31DB6E07B00E6B4E8 /* RCAPIProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE21DB6E07B00E6B4E8 /* RCAPIProvider.m */; };
+		1B341DE61DB6E96F00E6B4E8 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */; };
+		1B341DEA1DB6EA3500E6B4E8 /* RCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE91DB6EA3500E6B4E8 /* RCDataManager.m */; };
 		B769A14E5573F3D03F9BA9B7 /* libPods-RCGroup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C5E566F9AD707AC39A5EA /* libPods-RCGroup.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,12 @@
 		1B341DDB1DB66BEB00E6B4E8 /* RCAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCAPIClient.m; sourceTree = "<group>"; };
 		1B341DDE1DB6704B00E6B4E8 /* AppUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUser.h; sourceTree = "<group>"; };
 		1B341DDF1DB6704B00E6B4E8 /* AppUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUser.m; sourceTree = "<group>"; };
+		1B341DE11DB6E07B00E6B4E8 /* RCAPIProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCAPIProvider.h; sourceTree = "<group>"; };
+		1B341DE21DB6E07B00E6B4E8 /* RCAPIProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCAPIProvider.m; sourceTree = "<group>"; };
+		1B341DE41DB6E96F00E6B4E8 /* FriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
+		1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
+		1B341DE81DB6EA3500E6B4E8 /* RCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDataManager.h; sourceTree = "<group>"; };
+		1B341DE91DB6EA3500E6B4E8 /* RCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDataManager.m; sourceTree = "<group>"; };
 		6D7C5E566F9AD707AC39A5EA /* libPods-RCGroup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCGroup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		728FEF921688E886457018EC /* Pods-RCGroup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCGroup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCGroup/Pods-RCGroup.debug.xcconfig"; sourceTree = "<group>"; };
 		CE33F7946A00664018DB39D9 /* Pods-RCGroup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCGroup.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCGroup/Pods-RCGroup.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,16 +95,13 @@
 			isa = PBXGroup;
 			children = (
 				1B341DDD1DB6703200E6B4E8 /* Models */,
+				1B341DE71DB6E97800E6B4E8 /* ViewControllers */,
 				1B341DD91DB66BBD00E6B4E8 /* Networking Extensions */,
 				1B341DD51DB6669A00E6B4E8 /* Hashes */,
-				1B341DD21DB64BB000E6B4E8 /* ChatListViewController.h */,
-				1B341DD31DB64BB000E6B4E8 /* ChatListViewController.m */,
+				1B341DC41DB64A7600E6B4E8 /* Assets.xcassets */,
 				1B341DBB1DB64A7600E6B4E8 /* AppDelegate.h */,
 				1B341DBC1DB64A7600E6B4E8 /* AppDelegate.m */,
-				1B341DBE1DB64A7600E6B4E8 /* ViewController.h */,
-				1B341DBF1DB64A7600E6B4E8 /* ViewController.m */,
 				1B341DC11DB64A7600E6B4E8 /* Main.storyboard */,
-				1B341DC41DB64A7600E6B4E8 /* Assets.xcassets */,
 				1B341DC61DB64A7600E6B4E8 /* LaunchScreen.storyboard */,
 				1B341DC91DB64A7600E6B4E8 /* Info.plist */,
 				1B341DB81DB64A7600E6B4E8 /* Supporting Files */,
@@ -125,6 +131,8 @@
 			children = (
 				1B341DDA1DB66BEB00E6B4E8 /* RCAPIClient.h */,
 				1B341DDB1DB66BEB00E6B4E8 /* RCAPIClient.m */,
+				1B341DE11DB6E07B00E6B4E8 /* RCAPIProvider.h */,
+				1B341DE21DB6E07B00E6B4E8 /* RCAPIProvider.m */,
 			);
 			name = "Networking Extensions";
 			sourceTree = "<group>";
@@ -134,8 +142,23 @@
 			children = (
 				1B341DDE1DB6704B00E6B4E8 /* AppUser.h */,
 				1B341DDF1DB6704B00E6B4E8 /* AppUser.m */,
+				1B341DE81DB6EA3500E6B4E8 /* RCDataManager.h */,
+				1B341DE91DB6EA3500E6B4E8 /* RCDataManager.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		1B341DE71DB6E97800E6B4E8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B341DD21DB64BB000E6B4E8 /* ChatListViewController.h */,
+				1B341DD31DB64BB000E6B4E8 /* ChatListViewController.m */,
+				1B341DBE1DB64A7600E6B4E8 /* ViewController.h */,
+				1B341DBF1DB64A7600E6B4E8 /* ViewController.m */,
+				1B341DE41DB6E96F00E6B4E8 /* FriendListViewController.h */,
+				1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		7EE5CDD9A4C0CABEBEE03989 /* Pods */ = {
@@ -268,10 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B341DEA1DB6EA3500E6B4E8 /* RCDataManager.m in Sources */,
 				1B341DC01DB64A7600E6B4E8 /* ViewController.m in Sources */,
+				1B341DE61DB6E96F00E6B4E8 /* FriendListViewController.m in Sources */,
 				1B341DE01DB6704B00E6B4E8 /* AppUser.m in Sources */,
 				1B341DBD1DB64A7600E6B4E8 /* AppDelegate.m in Sources */,
 				1B341DD41DB64BB000E6B4E8 /* ChatListViewController.m in Sources */,
+				1B341DE31DB6E07B00E6B4E8 /* RCAPIProvider.m in Sources */,
 				1B341DD81DB666D000E6B4E8 /* NSString+Hashes.m in Sources */,
 				1B341DDC1DB66BEB00E6B4E8 /* RCAPIClient.m in Sources */,
 				1B341DBA1DB64A7600E6B4E8 /* main.m in Sources */,

@@ -20,8 +20,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[RCIM sharedRCIM] initWithAppKey:RCIM_APPKEY];
-    
-    
     return YES;
 }
 
@@ -45,6 +43,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
++ (AppDelegate* )shareAppDelegate {
+    return (AppDelegate*)[UIApplication sharedApplication].delegate;
+}
+
+- (NSMutableArray *)friendsArray {
+    if (_friendsArray == nil) {
+        _friendsArray = [[NSMutableArray alloc] init];
+    }
+    return _friendsArray;
 }
 
 @end

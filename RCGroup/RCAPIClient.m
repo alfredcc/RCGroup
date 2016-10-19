@@ -26,6 +26,7 @@ static NSString * const RCAPIBaseURLString = @"http://api.cn.ronghub.com/";
         NSString * appkey = @"pvxdm17jxm03r";
         NSString * signature = [[NSString stringWithFormat:@"%@%@%@",appSecret,nonce,timestamp] sha1];
         
+        // 需要提供 4 个 HTTP Request Header
         [_sharedClient.requestSerializer setValue:appkey forHTTPHeaderField:@"App-Key"];
         [_sharedClient.requestSerializer setValue:nonce forHTTPHeaderField:@"Nonce"];
         [_sharedClient.requestSerializer setValue:timestamp forHTTPHeaderField:@"Timestamp"];
