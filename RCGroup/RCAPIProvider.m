@@ -41,16 +41,69 @@
     }];
 }
 
-+ (NSURLSessionDataTask *)syncGroupWithGroupId:(NSString *)groupId userIds:(NSArray *)userIds groupName:(NSString *)groupName block:(void (^)(NSString *code, NSError *))block {
++ (NSURLSessionDataTask *)joinGroupWithGroupId:(NSString *)groupId userIds:(NSSet *)userIds groupName:(NSString *)groupName block:(void (^)(NSString *code, NSError *))block {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:groupId forKey:@"groupId"];
     [parameters setObject:groupName forKey:@"groupName"];
-    for (NSString *userId in userIds) {
-        [parameters setObject:userId forKey:@"userId"];
-    }
-    return [[RCAPIClient sharedClient] POST:@"group/sync.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [parameters setObject:userIds forKey:@"userId"];
+    
+    return [[RCAPIClient sharedClient] POST:@"group/join.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *code = [responseObject valueForKeyPath:@"code"];
         block(code, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"API Error");
+    }];
+}
+
++ (NSURLSessionDataTask *)quitGroupWithGroupId:(NSString *)groupId userId:(NSString *)userId block:(void (^)(NSString *code, NSError *))block {
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:groupId forKey:@"groupId"];
+    [parameters setObject:userId forKey:@"userId"];
+    
+    return [[RCAPIClient sharedClient] POST:@"group/quit.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *code = [responseObject valueForKeyPath:@"code"];
+        block(code, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"API Error");
+    }];
+}
+
++ (NSURLSessionDataTask *)dismissGroupWithGroupId:(NSString *)groupId userId:(NSString *)userId block:(void (^)(NSString *code, NSError *))block {
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:groupId forKey:@"groupId"];
+    [parameters setObject:userId forKey:@"userId"];
+    
+    return [[RCAPIClient sharedClient] POST:@"group/dismiss.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *code = [responseObject valueForKeyPath:@"code"];
+        block(code, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"API Error");
+    }];
+}
+
++ (NSURLSessionDataTask *)queryGroupUserWithGroupId:(NSString *)groupId block:(void (^)(NSArray *users, NSError *))block {
+    NSDictionary *parameters =@{@"groupId":groupId};
+    
+    return [[RCAPIClient sharedClient] POST:@"group/user/query.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *users = [responseObject valueForKeyPath:@"users"];
+        block(users, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"API Error");
+    }];
+}
+
++ (NSURLSessionDataTask *)sendGroupMessageFromUserId:(NSString *)userId toGroupId:(NSString *)toGroupId content:(NSString *)content block:(void (^ __nullable)(NSString *code, NSError *))block {
+    NSDictionary *parameters =@{@"fromUserId":userId,
+                                @"toGroupId":toGroupId,
+                                @"objectName":@"RC%3ATxtMsg",
+                                @"content": content
+                                };
+    
+    return [[RCAPIClient sharedClient] POST:@"message/group/publish.json" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSString *code = [responseObject valueForKeyPath:@"code"];
+        if (block != nil) {
+            block(code, nil);
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"API Error");
     }];

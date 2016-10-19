@@ -209,7 +209,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" textLabel="VjO-eY-BwR" style="IBUITableViewCellStyleDefault" id="Slh-Ar-QE1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" textLabel="VjO-eY-BwR" imageView="BGn-Xf-4TW" style="IBUITableViewCellStyleDefault" id="Slh-Ar-QE1">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Slh-Ar-QE1" id="vWO-DT-MUm">
@@ -226,6 +226,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="default_portrait_msg.png" id="BGn-Xf-4TW">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -321,7 +324,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" textLabel="vf6-ci-N68" style="IBUITableViewCellStyleDefault" id="Wc0-Aa-Q7q">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" textLabel="vf6-ci-N68" imageView="IbW-Gf-1Ge" style="IBUITableViewCellStyleDefault" id="Wc0-Aa-Q7q">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wc0-Aa-Q7q" id="RlE-q1-ZY7">
@@ -338,6 +341,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="default_portrait_msg.png" id="IbW-Gf-1Ge">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -387,6 +393,254 @@
             </objects>
             <point key="canvasLocation" x="432" y="547"/>
         </scene>
+        <!--Group Info View Controller-->
+        <scene sceneID="7Pb-wH-Bga">
+            <objects>
+                <viewController storyboardIdentifier="GroupInfoViewController" automaticallyAdjustsScrollViewInsets="NO" id="m6v-1Y-LP1" customClass="GroupInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZMB-Ld-8g3"/>
+                        <viewControllerLayoutGuide type="bottom" id="t5v-mF-q6f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1VD-gN-DuE">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="enH-BC-viS">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8g2-Ts-8p8">
+                                    <size key="itemSize" width="75" height="85"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupUserCollectionViewCell" id="cjF-Uy-4D4" customClass="GroupUserCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sM0-G1-h8H">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mM-6t-OPK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="DPB-aj-Cz8"/>
+                                                        <constraint firstAttribute="width" constant="44" id="e2w-DG-4d3"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="DPB-aj-Cz8"/>
+                                                            <exclude reference="e2w-DG-4d3"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="DPB-aj-Cz8"/>
+                                                            <include reference="e2w-DG-4d3"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="sM0-G1-h8H" firstAttribute="centerX" secondItem="cjF-Uy-4D4" secondAttribute="centerX" id="38G-YB-Dom"/>
+                                            <constraint firstItem="9mM-6t-OPK" firstAttribute="centerX" secondItem="cjF-Uy-4D4" secondAttribute="centerX" id="D1B-07-CV7"/>
+                                            <constraint firstItem="9mM-6t-OPK" firstAttribute="top" secondItem="cjF-Uy-4D4" secondAttribute="topMargin" constant="4" id="ElA-ZT-QeS"/>
+                                            <constraint firstItem="sM0-G1-h8H" firstAttribute="top" secondItem="9mM-6t-OPK" secondAttribute="bottom" constant="4" id="pMF-Bu-JWO"/>
+                                        </constraints>
+                                        <size key="customSize" width="80" height="80"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="sM0-G1-h8H"/>
+                                                <exclude reference="9mM-6t-OPK"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="38G-YB-Dom"/>
+                                                <exclude reference="pMF-Bu-JWO"/>
+                                                <exclude reference="D1B-07-CV7"/>
+                                                <exclude reference="ElA-ZT-QeS"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="sM0-G1-h8H"/>
+                                                <include reference="9mM-6t-OPK"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <include reference="38G-YB-Dom"/>
+                                                <include reference="pMF-Bu-JWO"/>
+                                                <include reference="D1B-07-CV7"/>
+                                                <include reference="ElA-ZT-QeS"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="sM0-G1-h8H" id="aCG-zw-16j"/>
+                                            <outlet property="portraitImageView" destination="9mM-6t-OPK" id="hYg-f2-FFg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddGroupUserCell" id="y2E-vd-Weg" customClass="GroupUserCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtT-4Z-Vb7">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="gtT-4Z-Vb7" firstAttribute="centerY" secondItem="y2E-vd-Weg" secondAttribute="centerY" id="Oui-x0-2ZY"/>
+                                            <constraint firstItem="gtT-4Z-Vb7" firstAttribute="centerX" secondItem="y2E-vd-Weg" secondAttribute="centerX" id="UXw-Ld-SH1"/>
+                                        </constraints>
+                                        <size key="customSize" width="80" height="80"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="gtT-4Z-Vb7"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="Oui-x0-2ZY"/>
+                                                <exclude reference="UXw-Ld-SH1"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="gtT-4Z-Vb7"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <include reference="Oui-x0-2ZY"/>
+                                                <include reference="UXw-Ld-SH1"/>
+                                            </mask>
+                                        </variation>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RemoveGroupUserCell" id="RcE-R5-zHa" customClass="GroupUserCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msk-V2-ILa">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="msk-V2-ILa" firstAttribute="centerX" secondItem="RcE-R5-zHa" secondAttribute="centerX" id="VeV-ta-55H"/>
+                                            <constraint firstItem="msk-V2-ILa" firstAttribute="centerY" secondItem="RcE-R5-zHa" secondAttribute="centerY" id="dLm-ru-F8H"/>
+                                        </constraints>
+                                        <size key="customSize" width="80" height="80"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="msk-V2-ILa"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="VeV-ta-55H"/>
+                                                <exclude reference="dLm-ru-F8H"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="msk-V2-ILa"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <include reference="VeV-ta-55H"/>
+                                                <include reference="dLm-ru-F8H"/>
+                                            </mask>
+                                        </variation>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCollectionViewFooter" id="FIm-ws-1qm">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y50-O0-FcN">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <state key="normal" title="退出群组"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Y50-O0-FcN" firstAttribute="centerX" secondItem="FIm-ws-1qm" secondAttribute="centerX" id="FOH-NQ-PWC"/>
+                                        <constraint firstItem="Y50-O0-FcN" firstAttribute="centerY" secondItem="FIm-ws-1qm" secondAttribute="centerY" id="gNo-Sk-IuK"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="Y50-O0-FcN"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="FOH-NQ-PWC"/>
+                                            <exclude reference="gNo-Sk-IuK"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="Y50-O0-FcN"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="FOH-NQ-PWC"/>
+                                            <include reference="gNo-Sk-IuK"/>
+                                        </mask>
+                                    </variation>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="m6v-1Y-LP1" id="hjQ-It-fLf"/>
+                                    <outlet property="delegate" destination="m6v-1Y-LP1" id="72E-wY-390"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="enH-BC-viS" secondAttribute="bottom" id="TQl-NW-Hji"/>
+                            <constraint firstItem="enH-BC-viS" firstAttribute="leading" secondItem="1VD-gN-DuE" secondAttribute="leading" id="baT-8N-go4"/>
+                            <constraint firstAttribute="trailing" secondItem="enH-BC-viS" secondAttribute="trailing" id="fnH-kK-ckp"/>
+                            <constraint firstItem="enH-BC-viS" firstAttribute="top" secondItem="1VD-gN-DuE" secondAttribute="top" id="gHr-ao-Y7r"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="enH-BC-viS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TQl-NW-Hji"/>
+                                <exclude reference="baT-8N-go4"/>
+                                <exclude reference="fnH-kK-ckp"/>
+                                <exclude reference="gHr-ao-Y7r"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="enH-BC-viS"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="TQl-NW-Hji"/>
+                                <include reference="baT-8N-go4"/>
+                                <include reference="fnH-kK-ckp"/>
+                                <include reference="gHr-ao-Y7r"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="enH-BC-viS" id="UKk-Za-eb3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8NO-ey-5yl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440" y="547"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6aY-97-VNu">
             <objects>
@@ -425,4 +679,7 @@
             <point key="canvasLocation" x="1138.5" y="1227"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default_portrait_msg.png" width="46" height="46"/>
+    </resources>
 </document>

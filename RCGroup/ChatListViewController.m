@@ -8,6 +8,7 @@
 
 #import "ChatListViewController.h"
 #import <RongIMKit/RongIMKit.h>
+#import "RCGConversationViewController.h"
 #import "FriendListViewController.h"
 
 @interface ChatListViewController ()
@@ -42,13 +43,22 @@
 - (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
          conversationModel:(RCConversationModel *)model
                atIndexPath:(NSIndexPath *)indexPath {
-    RCConversationViewController *conversationVC = [[RCConversationViewController alloc] init];
-    conversationVC.conversationType = model.conversationType;
-    conversationVC.targetId = model.targetId;
-    conversationVC.title = model.conversationTitle;
-    conversationVC.hidesBottomBarWhenPushed = true;
-    [self.navigationController pushViewController:conversationVC animated:YES];
-    
+    // 区分单聊和群组界面
+    if (model.conversationType == ConversationType_GROUP) {
+        RCGConversationViewController *conversationVC = [[RCGConversationViewController alloc] init];
+        conversationVC.conversationType = model.conversationType;
+        conversationVC.targetId = model.targetId;
+        conversationVC.title = model.conversationTitle;
+        conversationVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:conversationVC animated:YES];
+    } else {
+        RCConversationViewController *conversationVC = [[RCConversationViewController alloc] init];
+        conversationVC.conversationType = model.conversationType;
+        conversationVC.targetId = model.targetId;
+        conversationVC.title = model.conversationTitle;
+        conversationVC.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:conversationVC animated:YES];
+    }
 }
 
 @end

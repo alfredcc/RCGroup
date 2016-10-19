@@ -45,6 +45,7 @@ static NSString * const showTabBar = @"presentTabBarVC";
     [RCAPIProvider loginWithUserId:userID name:userName block:^(AppUser *user, NSError *error) {
         [[RCIM sharedRCIM] connectWithToken: user.token success:^(NSString *userId) {
             NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+            [RCIM sharedRCIM].currentUserInfo = [[RCUserInfo alloc] initWithUserId:userId name:userName portrait:user.token];
             [AppDelegate shareAppDelegate].currentUserId = userId;
             [[RCIM sharedRCIM] setUserInfoDataSource:self];
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -48,7 +48,8 @@
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"friendCell"];
     RCUserInfo *userInfo = self.dataSource[indexPath.row];
     cell.textLabel.text = userInfo.name;
-    [cell.imageView setImageWithURL:[NSURL URLWithString:userInfo.portraitUri]];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:userInfo.portraitUri] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
+
     return cell;
 }
 

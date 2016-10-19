@@ -12,6 +12,7 @@
 #import "RCAPIProvider.h"
 #import "AppDelegate.h"
 #import "NSString+Hashes.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface NewGroupViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -57,12 +58,9 @@
         [RCAPIProvider createGroupWithGroupId:groupId userIds:self.userIds groupName:namefield.text block:^(NSString *code, NSError *error) {
             NSLog(@"%@", code);
             if (error == nil) {
-//                RCConversationViewController *conversationVC = [[RCConversationViewController alloc] init];
-//                conversationVC.conversationType = ConversationType_GROUP;
-//                conversationVC.targetId = groupId;
-//                conversationVC.title = [NSString stringWithFormat:@"%@",namefield.text];
-//                [self.navigationController pushViewController:conversationVC animated:YES];
-                [self dismissViewControllerAnimated:true completion:nil];
+                [self dismissViewControllerAnimated:true completion:^{
+                    [self sendGroupMessageWithGroupId:groupId];
+                }];
             }
         }];
     }]];
@@ -82,6 +80,7 @@
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"friendCell"];
     RCUserInfo *userInfo = self.dataSource[indexPath.row];
     cell.textLabel.text = userInfo.name;
+    [cell.imageView setImageWithURL:[NSURL URLWithString:userInfo.portraitUri] placeholderImage:[UIImage imageNamed:@"default_portrait_msg"]];
     return cell;
 }
 
@@ -109,5 +108,13 @@
         [_userIds addObject:[AppDelegate shareAppDelegate].currentUserId];
     }
     return _userIds;
+}
+
+#pragma mark - private methods
+
+- (void)sendGroupMessageWithGroupId:(NSString *)groupId {
+    NSString *userId = [AppDelegate shareAppDelegate].currentUserId;
+    NSString *content = @"我发起了一个群聊";
+    [RCAPIProvider sendGroupMessageFromUserId:userId toGroupId:groupId content:content block:nil];
 }
 @end

@@ -21,6 +21,9 @@
 		1B341DE61DB6E96F00E6B4E8 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */; };
 		1B341DEA1DB6EA3500E6B4E8 /* RCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DE91DB6EA3500E6B4E8 /* RCDataManager.m */; };
 		1B341DF01DB7063B00E6B4E8 /* NewGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DEF1DB7063B00E6B4E8 /* NewGroupViewController.m */; };
+		1B341DF31DB746F400E6B4E8 /* RCGConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B341DF21DB746F400E6B4E8 /* RCGConversationViewController.m */; };
+		1B7721DF1DB74DBD00F8B0DE /* GroupInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7721DE1DB74DBD00F8B0DE /* GroupInfoViewController.m */; };
+		1B7721E31DB74EBF00F8B0DE /* GroupUserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7721E21DB74EBF00F8B0DE /* GroupUserCollectionViewCell.m */; };
 		B769A14E5573F3D03F9BA9B7 /* libPods-RCGroup.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C5E566F9AD707AC39A5EA /* libPods-RCGroup.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +54,12 @@
 		1B341DE91DB6EA3500E6B4E8 /* RCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDataManager.m; sourceTree = "<group>"; };
 		1B341DEE1DB7063B00E6B4E8 /* NewGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGroupViewController.h; sourceTree = "<group>"; };
 		1B341DEF1DB7063B00E6B4E8 /* NewGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGroupViewController.m; sourceTree = "<group>"; };
+		1B341DF11DB746F400E6B4E8 /* RCGConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCGConversationViewController.h; sourceTree = "<group>"; };
+		1B341DF21DB746F400E6B4E8 /* RCGConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCGConversationViewController.m; sourceTree = "<group>"; };
+		1B7721DD1DB74DBD00F8B0DE /* GroupInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupInfoViewController.h; sourceTree = "<group>"; };
+		1B7721DE1DB74DBD00F8B0DE /* GroupInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupInfoViewController.m; sourceTree = "<group>"; };
+		1B7721E11DB74EBF00F8B0DE /* GroupUserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupUserCollectionViewCell.h; sourceTree = "<group>"; };
+		1B7721E21DB74EBF00F8B0DE /* GroupUserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupUserCollectionViewCell.m; sourceTree = "<group>"; };
 		6D7C5E566F9AD707AC39A5EA /* libPods-RCGroup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCGroup.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		728FEF921688E886457018EC /* Pods-RCGroup.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCGroup.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCGroup/Pods-RCGroup.debug.xcconfig"; sourceTree = "<group>"; };
 		CE33F7946A00664018DB39D9 /* Pods-RCGroup.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCGroup.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCGroup/Pods-RCGroup.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1B341DDD1DB6703200E6B4E8 /* Models */,
+				1B7721E01DB74E9B00F8B0DE /* Views */,
 				1B341DE71DB6E97800E6B4E8 /* ViewControllers */,
 				1B341DD91DB66BBD00E6B4E8 /* Networking Extensions */,
 				1B341DD51DB6669A00E6B4E8 /* Hashes */,
@@ -162,8 +172,21 @@
 				1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */,
 				1B341DEE1DB7063B00E6B4E8 /* NewGroupViewController.h */,
 				1B341DEF1DB7063B00E6B4E8 /* NewGroupViewController.m */,
+				1B341DF11DB746F400E6B4E8 /* RCGConversationViewController.h */,
+				1B341DF21DB746F400E6B4E8 /* RCGConversationViewController.m */,
+				1B7721DD1DB74DBD00F8B0DE /* GroupInfoViewController.h */,
+				1B7721DE1DB74DBD00F8B0DE /* GroupInfoViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1B7721E01DB74E9B00F8B0DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B7721E11DB74EBF00F8B0DE /* GroupUserCollectionViewCell.h */,
+				1B7721E21DB74EBF00F8B0DE /* GroupUserCollectionViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		7EE5CDD9A4C0CABEBEE03989 /* Pods */ = {
@@ -300,11 +323,14 @@
 				1B341DC01DB64A7600E6B4E8 /* ViewController.m in Sources */,
 				1B341DE61DB6E96F00E6B4E8 /* FriendListViewController.m in Sources */,
 				1B341DE01DB6704B00E6B4E8 /* AppUser.m in Sources */,
+				1B341DF31DB746F400E6B4E8 /* RCGConversationViewController.m in Sources */,
 				1B341DBD1DB64A7600E6B4E8 /* AppDelegate.m in Sources */,
 				1B341DD41DB64BB000E6B4E8 /* ChatListViewController.m in Sources */,
+				1B7721DF1DB74DBD00F8B0DE /* GroupInfoViewController.m in Sources */,
 				1B341DE31DB6E07B00E6B4E8 /* RCAPIProvider.m in Sources */,
 				1B341DF01DB7063B00E6B4E8 /* NewGroupViewController.m in Sources */,
 				1B341DD81DB666D000E6B4E8 /* NSString+Hashes.m in Sources */,
+				1B7721E31DB74EBF00F8B0DE /* GroupUserCollectionViewCell.m in Sources */,
 				1B341DDC1DB66BEB00E6B4E8 /* RCAPIClient.m in Sources */,
 				1B341DBA1DB64A7600E6B4E8 /* main.m in Sources */,
 			);
