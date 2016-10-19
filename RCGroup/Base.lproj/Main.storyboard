@@ -341,7 +341,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="default_portrait_msg.png" id="IbW-Gf-1Ge">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="scenery-1" id="IbW-Gf-1Ge">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -427,7 +427,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mM-6t-OPK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery-1" translatesAutoresizingMaskIntoConstraints="NO" id="9mM-6t-OPK">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="DPB-aj-Cz8"/>
@@ -497,9 +497,6 @@
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="25" y="9.5" width="30.5" height="60"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -693,7 +690,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     </variation>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="default_portrait_msg.png" id="1N4-Xg-5uK">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="scenery-1" id="1N4-Xg-5uK">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -777,5 +774,6 @@
     </scenes>
     <resources>
         <image name="default_portrait_msg.png" width="46" height="46"/>
+        <image name="scenery-1" width="512" height="512"/>
     </resources>
 </document>

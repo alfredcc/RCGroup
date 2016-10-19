@@ -167,10 +167,10 @@
 		1B341DE71DB6E97800E6B4E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1B341DD21DB64BB000E6B4E8 /* ChatListViewController.h */,
-				1B341DD31DB64BB000E6B4E8 /* ChatListViewController.m */,
 				1B341DBE1DB64A7600E6B4E8 /* ViewController.h */,
 				1B341DBF1DB64A7600E6B4E8 /* ViewController.m */,
+				1B341DD21DB64BB000E6B4E8 /* ChatListViewController.h */,
+				1B341DD31DB64BB000E6B4E8 /* ChatListViewController.m */,
 				1B341DE41DB6E96F00E6B4E8 /* FriendListViewController.h */,
 				1B341DE51DB6E96F00E6B4E8 /* FriendListViewController.m */,
 				1B341DEE1DB7063B00E6B4E8 /* NewGroupViewController.h */,

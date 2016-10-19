@@ -59,6 +59,7 @@
             NSLog(@"%@", code);
             if (error == nil) {
                 [self dismissViewControllerAnimated:true completion:^{
+                    // not works
                     [self sendGroupMessageWithGroupId:groupId];
                 }];
             }

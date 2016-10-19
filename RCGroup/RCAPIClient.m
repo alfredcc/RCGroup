@@ -32,7 +32,6 @@ static NSString * const RCAPIBaseURLString = @"http://api.cn.ronghub.com/";
         [_sharedClient.requestSerializer setValue:timestamp forHTTPHeaderField:@"Timestamp"];
         [_sharedClient.requestSerializer setValue:signature forHTTPHeaderField:@"Signature"];
         [_sharedClient.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-
     });
     
     return _sharedClient;
