@@ -528,49 +528,6 @@
                                             </mask>
                                         </variation>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RemoveGroupUserCell" id="RcE-R5-zHa" customClass="GroupUserCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="85"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msk-V2-ILa">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="29" y="9.5" width="22" height="60"/>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="msk-V2-ILa" firstAttribute="centerX" secondItem="RcE-R5-zHa" secondAttribute="centerX" id="VeV-ta-55H"/>
-                                            <constraint firstItem="msk-V2-ILa" firstAttribute="centerY" secondItem="RcE-R5-zHa" secondAttribute="centerY" id="dLm-ru-F8H"/>
-                                        </constraints>
-                                        <size key="customSize" width="80" height="85"/>
-                                        <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="msk-V2-ILa"/>
-                                            </mask>
-                                            <mask key="constraints">
-                                                <exclude reference="VeV-ta-55H"/>
-                                                <exclude reference="dLm-ru-F8H"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="subviews">
-                                                <include reference="msk-V2-ILa"/>
-                                            </mask>
-                                            <mask key="constraints">
-                                                <include reference="VeV-ta-55H"/>
-                                                <include reference="dLm-ru-F8H"/>
-                                            </mask>
-                                        </variation>
-                                    </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCollectionViewFooter" id="FIm-ws-1qm">
                                     <autoresizingMask key="autoresizingMask"/>

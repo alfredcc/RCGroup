@@ -58,15 +58,12 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.dataSource.count + 2;
+    return self.dataSource.count + 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == self.dataSource.count) {
         GroupUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AddGroupUserCell" forIndexPath:indexPath];
-        return cell;
-    } else if (indexPath.row == self.dataSource.count + 1) {
-        GroupUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RemoveGroupUserCell" forIndexPath:indexPath];
         return cell;
     }
     GroupUserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GroupUserCollectionViewCell" forIndexPath:indexPath];
@@ -95,8 +92,6 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == self.dataSource.count) {
         [self performSegueWithIdentifier:@"PresetAddGroupUserVC" sender:nil];
-    }else if (indexPath.row == self.dataSource.count + 1) {
-        
     }
 }
 
