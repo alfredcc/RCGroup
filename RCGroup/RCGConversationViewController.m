@@ -34,7 +34,6 @@
     GroupInfoViewController * viewController = (GroupInfoViewController *)[sb instantiateViewControllerWithIdentifier:@"GroupInfoViewController"];
     viewController.groupId = self.targetId;
     [[self navigationController] pushViewController:viewController animated:true];
-
 }
 
 @end

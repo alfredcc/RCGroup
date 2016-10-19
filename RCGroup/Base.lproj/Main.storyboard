@@ -193,7 +193,7 @@
             </objects>
             <point key="canvasLocation" x="424.5" y="1227"/>
         </scene>
-        <!--选择好友-->
+        <!--选择群好友-->
         <scene sceneID="dmv-4C-cMo">
             <objects>
                 <viewController storyboardIdentifier="NewGroupViewController" id="2Mo-Di-4Vz" customClass="NewGroupViewController" sceneMemberID="viewController">
@@ -269,7 +269,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="选择好友" id="6c1-Ah-Wj6">
+                    <navigationItem key="navigationItem" title="选择群好友" id="6c1-Ah-Wj6">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="yl9-Sr-EC7">
                             <connections>
                                 <action selector="cancleItemTapped:" destination="2Mo-Di-4Vz" id="1hj-bZ-MkO"/>
@@ -426,9 +426,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="17.5" y="66" width="35.5" height="17"/>
-                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mM-6t-OPK">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -442,8 +439,7 @@
                                                             <exclude reference="e2w-DG-4d3"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="10" y="12" width="50" height="50"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="DPB-aj-Cz8"/>
                                                             <include reference="e2w-DG-4d3"/>
@@ -581,20 +577,34 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y50-O0-FcN">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                            <state key="normal" title="退出群组"/>
+                                            <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="退出群组">
+                                                <color key="titleColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="quitButtonTapped:" destination="m6v-1Y-LP1" eventType="touchUpInside" id="0qj-Hp-aNF"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Y50-O0-FcN" firstAttribute="top" secondItem="FIm-ws-1qm" secondAttribute="top" id="5SC-Cd-A2j"/>
                                         <constraint firstItem="Y50-O0-FcN" firstAttribute="centerX" secondItem="FIm-ws-1qm" secondAttribute="centerX" id="FOH-NQ-PWC"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y50-O0-FcN" secondAttribute="bottom" id="X2E-e0-c5B"/>
                                         <constraint firstItem="Y50-O0-FcN" firstAttribute="centerY" secondItem="FIm-ws-1qm" secondAttribute="centerY" id="gNo-Sk-IuK"/>
+                                        <constraint firstItem="Y50-O0-FcN" firstAttribute="leading" secondItem="FIm-ws-1qm" secondAttribute="leading" constant="15" id="nu2-NA-dQy"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y50-O0-FcN" secondAttribute="trailing" constant="15" id="vhU-gl-3rF"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="Y50-O0-FcN"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <exclude reference="5SC-Cd-A2j"/>
                                             <exclude reference="FOH-NQ-PWC"/>
+                                            <exclude reference="X2E-e0-c5B"/>
                                             <exclude reference="gNo-Sk-IuK"/>
+                                            <exclude reference="nu2-NA-dQy"/>
+                                            <exclude reference="vhU-gl-3rF"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -602,8 +612,12 @@
                                             <include reference="Y50-O0-FcN"/>
                                         </mask>
                                         <mask key="constraints">
+                                            <include reference="5SC-Cd-A2j"/>
                                             <include reference="FOH-NQ-PWC"/>
+                                            <include reference="X2E-e0-c5B"/>
                                             <include reference="gNo-Sk-IuK"/>
+                                            <include reference="nu2-NA-dQy"/>
+                                            <include reference="vhU-gl-3rF"/>
                                         </mask>
                                     </variation>
                                 </collectionReusableView>
@@ -650,7 +664,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NO-ey-5yl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="547"/>
+            <point key="canvasLocation" x="-276" y="-261"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6aY-97-VNu">
@@ -783,7 +797,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="772-TY-Hzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3178.5" y="547"/>
+            <point key="canvasLocation" x="1462.5" y="-261"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fuX-fQ-YOW">
@@ -801,7 +815,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbH-9c-xTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260.5" y="547"/>
+            <point key="canvasLocation" x="544.5" y="-261"/>
         </scene>
     </scenes>
     <resources>

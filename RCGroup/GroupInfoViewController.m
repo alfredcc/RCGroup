@@ -39,6 +39,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)quitButtonTapped:(id)sender {
+    [RCAPIProvider quitGroupWithGroupId:self.groupId userId:[[RCIM sharedRCIM].currentUserInfo userId] block:^(NSString *code, NSError *error) {
+        NSLog(@"%@",code);
+    }];
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"PresetAddGroupUserVC"]) {
@@ -73,6 +78,16 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(80, 85);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableview = nil;
+    if (kind == UICollectionElementKindSectionFooter) {
+        UICollectionReusableView *footerview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"GroupCollectionViewFooter" forIndexPath:indexPath];
+        
+        reusableview = footerview;
+    }
+    return reusableview;
 }
 
 #pragma mark - UICollectionViewDelegate
